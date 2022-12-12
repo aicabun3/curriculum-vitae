@@ -65,7 +65,7 @@ class _SecondRouteState extends State<SecondRoute> {
                                   "Welcome back ! Login with your credentials",
                                   style: TextStyle(
                                     fontSize: 15,
-                                    color: Color.fromARGB(255, 194, 40, 186),
+                                    color: Colors.grey[700],
                                   ),
                                 ),
                                 SizedBox(
@@ -80,6 +80,7 @@ class _SecondRouteState extends State<SecondRoute> {
                                 decoration: InputDecoration(
                                     hintText: "Email",
                                     border: OutlineInputBorder()),
+                                    autovalidateMode: AutovalidateMode.onUserInteraction,
                                 validator: (value) {
                                   if (RegExp(emailRegex).hasMatch(value!)) {
                                   } else if (value == null || value.isEmpty) {
@@ -98,6 +99,7 @@ class _SecondRouteState extends State<SecondRoute> {
                                 decoration: InputDecoration(
                                     hintText: "Password",
                                     border: OutlineInputBorder()),
+                                    autovalidateMode: AutovalidateMode.onUserInteraction,
                                 validator: (value) {
                                   if (value == null || value.isEmpty) {
                                     return "Field cannot be empty";
@@ -133,7 +135,7 @@ class _SecondRouteState extends State<SecondRoute> {
                                       return null;
                                     }
                                   },
-                                  color: Color.fromARGB(255, 196, 113, 191),
+                                  color: Colors.greenAccent[400],
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(40)),
                                   child: Text(
@@ -196,7 +198,7 @@ Widget makeInput({label, obsureText = false}) {
       Text(
         label,
         style: TextStyle(
-            fontSize: 15, fontWeight: FontWeight.w400, color: Color.fromARGB(221, 150, 92, 135)),
+            fontSize: 15, fontWeight: FontWeight.w400, color: Colors.black87),
       ),
       SizedBox(
         height: 5,
@@ -207,7 +209,7 @@ Widget makeInput({label, obsureText = false}) {
           contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(
-              color: Color.fromARGB(255, 148, 41, 130),
+              color: Colors.grey,
             ),
           ),
           border:

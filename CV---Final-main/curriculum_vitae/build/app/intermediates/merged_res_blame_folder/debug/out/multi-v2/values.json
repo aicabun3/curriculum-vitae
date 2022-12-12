@@ -1,8 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\User\\Downloads\\CV---Final-main (1)\\CV---Final-main\\curriculum_vitae\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\aica\\CV\\CV---Final-main\\curriculum_vitae\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
+                {
+                    "source": "C:\\aica\\CV\\CV---Final-main\\curriculum_vitae\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "347"
+                    },
+                    "to": {
+                        "startLines": "93",
+                        "startColumns": "4",
+                        "startOffsets": "5462",
+                        "endLines": "97",
+                        "endColumns": "12",
+                        "endOffsets": "5754"
+                    }
+                },
                 {
                     "source": "C:\\Users\\User\\.gradle\\caches\\transforms-3\\cdc8381483b8f93e69df15ad3eb1e86a\\transformed\\core-1.6.0\\res\\values\\values.xml",
                     "from": {
@@ -39,25 +58,6 @@
                         "endLines": "7,8,9,10,72,118,122,271,288,296",
                         "endColumns": "11,59,51,44,59,24,24,24,24,24",
                         "endOffsets": "289,349,401,446,4387,7069,7266,16227,17341,17734"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\User\\Downloads\\CV---Final-main (1)\\CV---Final-main\\curriculum_vitae\\android\\app\\src\\main\\res\\values\\styles.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "6",
-                        "endColumns": "12",
-                        "endOffsets": "347"
-                    },
-                    "to": {
-                        "startLines": "93",
-                        "startColumns": "4",
-                        "startOffsets": "5462",
-                        "endLines": "97",
-                        "endColumns": "12",
-                        "endOffsets": "5754"
                     }
                 }
             ]

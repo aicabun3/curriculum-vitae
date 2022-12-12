@@ -68,7 +68,7 @@ class _ThirdRouteState extends State<ThirdRoute> {
                             "Create an Account,Its free",
                             style: TextStyle(
                               fontSize: 15,
-                              color: Color.fromARGB(255, 101, 57, 105),
+                              color: Colors.grey[700],
                             ),
                           ),
                           SizedBox(
@@ -86,9 +86,47 @@ class _ThirdRouteState extends State<ThirdRoute> {
                           decoration: InputDecoration(
                               hintText: "Full Name",
                               border: OutlineInputBorder()),
+                              autovalidateMode: AutovalidateMode.onUserInteraction,
+                          validator: (value) {
+                            if(value!.isEmpty || value.length <=2){
+                              return "Please enter your full name";
+                            } else if (!RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
+                              return "Please enter your real name";
+                            }
+                            return null;
+                          },
+                          onSaved: (value) {},
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            bottom: 15, left: 10, right: 10),
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                              hintText: "Age", border: OutlineInputBorder()),
+                              autovalidateMode: AutovalidateMode.onUserInteraction,
+                              keyboardType: TextInputType.number,
                           validator: (value) {
                             if (value!.isEmpty) {
-                              return 'Please enter full name';
+                              return "Please enter your age";
+                            } else if (value.length >= 18 || double.parse(value) < 18) {
+                              return "18 years old and above only";
+                            }
+                          },
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            bottom: 15, left: 10, right: 10),
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                              hintText: "Address",
+                              border: OutlineInputBorder()),
+                              autovalidateMode: AutovalidateMode.onUserInteraction,
+                              keyboardType: TextInputType.streetAddress,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return 'Please enter address';
                             }
                             return null;
                           },
@@ -101,6 +139,8 @@ class _ThirdRouteState extends State<ThirdRoute> {
                         child: TextFormField(
                           decoration: InputDecoration(
                               hintText: "Email", border: OutlineInputBorder()),
+                              autovalidateMode: AutovalidateMode.onUserInteraction,
+                              keyboardType: TextInputType.emailAddress,
                           validator: (value) {
                             if (RegExp(emailRegex).hasMatch(value!)) {
                             } else if (value == null || value.isEmpty) {
@@ -118,11 +158,15 @@ class _ThirdRouteState extends State<ThirdRoute> {
                           decoration: InputDecoration(
                               hintText: "Phone No",
                               border: OutlineInputBorder()),
+                              autovalidateMode: AutovalidateMode.onUserInteraction,
                           keyboardType: TextInputType.number,
                           validator: (value) {
                             if (value!.isEmpty) {
                               return 'Please enter phone number ';
-                            }
+                            } else if (value.length <11)
+                              return 'Please enter a correct number';
+                              else if (value.length >11)
+                              return 'Please enter a correct number';
                             return null;
                           },
                           onSaved: (value) {},
@@ -136,6 +180,7 @@ class _ThirdRouteState extends State<ThirdRoute> {
                           decoration: InputDecoration(
                               hintText: "Create a Password",
                               border: OutlineInputBorder()),
+                              autovalidateMode: AutovalidateMode.onUserInteraction,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return "Please create a password";
@@ -155,10 +200,13 @@ class _ThirdRouteState extends State<ThirdRoute> {
                             decoration: InputDecoration(
                                 hintText: "Confirm Password",
                                 border: OutlineInputBorder()),
+                                autovalidateMode: AutovalidateMode.onUserInteraction,
                             validator: (value) {
                               if (value == null || value.isEmpty) {
                                 return "Please re-enter password";
-                              }
+                              } else if (value.length < 5) {
+                              return "Must be at least 6 chars";
+                              } else {
                               print(password.text);
 
                               print(confirmpassword.text);
@@ -167,6 +215,7 @@ class _ThirdRouteState extends State<ThirdRoute> {
                                 return "Password does not match";
                               }
                               return null;
+                              }
                             }),
                       ),
                       Padding(
@@ -196,7 +245,7 @@ class _ThirdRouteState extends State<ThirdRoute> {
                                 print("UnSuccessfull");
                               }
                             },
-                            color: Color.fromARGB(255, 58, 75, 105),
+                            color: Colors.blueAccent,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(40)),
                             child: Text(
